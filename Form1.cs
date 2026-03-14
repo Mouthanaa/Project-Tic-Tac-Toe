@@ -23,25 +23,23 @@ namespace Project_Tic_Tac_Toe
         {
             Graphics g = e.Graphics;
 
-            // لون أبيض
             Pen pen = new Pen(Color.White, 5);
 
             pen.Width = 8;
-            // مركز الدوران
+
             g.TranslateTransform(210, 50);
 
-            // زاوية الميل
-            g.RotateTransform(0); // غيّر الرقم لتعديل الميل
+            g.RotateTransform(0); 
 
-            // الخطوط العمودية
+            
             g.DrawLine(pen, 200, 75, 200, 325);
             g.DrawLine(pen, 300, 75, 300, 325);
 
-            // الخطوط الأفقية
+           
             g.DrawLine(pen, 100, 150, 400, 150);
             g.DrawLine(pen, 100, 250, 400, 250);
 
-            // إعادة التحويل للوضع الطبيعي
+            
             g.ResetTransform();
         }
 
