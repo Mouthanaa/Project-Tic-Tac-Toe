@@ -122,6 +122,18 @@ namespace Project_Tic_Tac_Toe
 
         }
 
+        public bool CheckValue(Button btn1, Button btn2, Button btn3) 
+        {
+            if (IsCellUsed(btn1.Text) && btn1.Text == btn2.Text && btn1.Text == btn3.Text)
+            {
+                return true;
+            }
+            else 
+            {
+                return false;
+            }
+        }
+
         public bool CheckWinner() 
         {
 
@@ -131,52 +143,37 @@ namespace Project_Tic_Tac_Toe
                 return false;
             }
 
-                if (IsCellUsed(button2.Text))
+            if(CheckValue(button1, button2, button3)) 
             {
-            
-                    if (button2.Text == button3.Text && button2.Text == button4.Text)
-                    {
-                            Winner(button2, button3, button4); 
-                    } 
-                    else if (button2.Text == button5.Text && button2.Text == button8.Text)
-                    {
-                        Winner(button2, button5, button8);
-                    }
-                    else if (button2.Text == button6.Text && button2.Text == button10.Text)
-                    {
-                        Winner(button2, button6, button10);
-                    }
+                Winner(button1, button2, button3);
             }
-
-            if (IsCellUsed(button3.Text))
+            else if (CheckValue(button4, button5, button6)) 
             {
-                if (button3.Text == button6.Text && button3.Text == button9.Text)
-                {
-                    Winner(button3, button6, button9);
-                }
+                Winner(button4, button5, button6);
             }
-             if (IsCellUsed(button4.Text))
+            else if (CheckValue(button7, button8, button9)) 
             {
-                if (button4.Text == button6.Text && button4.Text == button8.Text)
-                {
-                    Winner(button4, button6, button8);
-                }
-                else if(button4.Text == button7.Text && button4.Text == button10.Text) 
-                {
-                    Winner(button4, button7, button10);
-                }
-            }if (IsCellUsed(button5.Text)) 
+                Winner(button7, button8, button9);
+            }
+            else if (CheckValue(button1, button4, button7)) 
             {
-                if (button5.Text == button6.Text && button5.Text == button7.Text)
-                {
-                    Winner(button5, button6, button7);
-                }
-            } if (IsCellUsed(button8.Text)) 
+                Winner(button1, button4, button7);
+            }
+            else if (CheckValue(button2, button5, button8)) 
             {
-                if (button8.Text == button9.Text && button8.Text == button10.Text)
-                {
-                    Winner(button8, button9, button10);
-                }
+                Winner(button2, button5, button8);
+            }
+            else if (CheckValue(button3, button6, button9)) 
+            {
+                Winner(button3, button6, button9);
+            }
+            else if (CheckValue(button1, button5, button9)) 
+            {
+                Winner(button1, button5, button9);
+            }
+            else if (CheckValue(button3, button5, button7)) 
+            {
+                Winner(button3, button5, button7);
             }
 
             if (IsDraw()) 
@@ -204,6 +201,11 @@ namespace Project_Tic_Tac_Toe
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Playing(button1);
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             Playing(button2);
@@ -212,12 +214,12 @@ namespace Project_Tic_Tac_Toe
         private void button3_Click(object sender, EventArgs e)
         {
             Playing(button3);
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             Playing(button4);
-
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -233,8 +235,8 @@ namespace Project_Tic_Tac_Toe
         private void button7_Click(object sender, EventArgs e)
         {
             Playing(button7);
-        }
-
+        }                                      
+                                               
         private void button8_Click(object sender, EventArgs e)
         {
             Playing(button8);
@@ -243,11 +245,6 @@ namespace Project_Tic_Tac_Toe
         private void button9_Click(object sender, EventArgs e)
         {
             Playing(button9);
-        }                                      
-                                               
-        private void button10_Click(object sender, EventArgs e)
-        {
-            Playing(button10);
         }
 
         private void BtRestart_Click(object sender, EventArgs e)
