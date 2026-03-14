@@ -23,6 +23,7 @@ namespace Project_Tic_Tac_Toe
         {
             Graphics g = e.Graphics;
 
+
             Pen pen = new Pen(Color.White, 5);
 
             pen.Width = 8;
