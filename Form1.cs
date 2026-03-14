@@ -47,13 +47,7 @@ namespace Project_Tic_Tac_Toe
 
         public bool IsCellUsed(string check) 
         {
-            if (check == "?")
-            {
-                return false;
-            }
-            else
-                //MessageBox.Show("Wrong Choose!", MessageBoxIcon.Error.ToString());
-            return true;
+            return check != "?";
         }
 
         public bool IsGameOver() 
