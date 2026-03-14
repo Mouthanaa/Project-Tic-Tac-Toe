@@ -64,7 +64,7 @@ namespace Project_Tic_Tac_Toe
 
         }
 
-        public void Win(Button btn1, Button btn2, Button btn3)
+        public void CheckWinner(Button btn1, Button btn2, Button btn3)
         {
             btn1.BackColor = Color.Yellow;
             btn2.BackColor = Color.Yellow;
@@ -137,15 +137,15 @@ namespace Project_Tic_Tac_Toe
             
                     if (button2.Text == button3.Text && button2.Text == button4.Text)
                     {
-                            Win(button2, button3, button4); 
+                            CheckWinner(button2, button3, button4); 
                     } 
                     else if (button2.Text == button5.Text && button2.Text == button8.Text)
                     {
-                        Win(button2, button5, button8);
+                        CheckWinner(button2, button5, button8);
                     }
                     else if (button2.Text == button6.Text && button2.Text == button10.Text)
                     {
-                        Win(button2, button6, button10);
+                        CheckWinner(button2, button6, button10);
                     }
             }
 
@@ -153,30 +153,30 @@ namespace Project_Tic_Tac_Toe
             {
                 if (button3.Text == button6.Text && button3.Text == button9.Text)
                 {
-                    Win(button3, button6, button9);
+                    CheckWinner(button3, button6, button9);
                 }
             }
              if (IsCellUsed(button4.Text))
             {
                 if (button4.Text == button6.Text && button4.Text == button8.Text)
                 {
-                    Win(button4, button6, button8);
+                    CheckWinner(button4, button6, button8);
                 }
                 else if(button4.Text == button7.Text && button4.Text == button10.Text) 
                 {
-                    Win(button4, button7, button10);
+                    CheckWinner(button4, button7, button10);
                 }
             }if (IsCellUsed(button5.Text)) 
             {
                 if (button5.Text == button6.Text && button5.Text == button7.Text)
                 {
-                    Win(button5, button6, button7);
+                    CheckWinner(button5, button6, button7);
                 }
             } if (IsCellUsed(button8.Text)) 
             {
                 if (button8.Text == button9.Text && button8.Text == button10.Text)
                 {
-                    Win(button8, button9, button10);
+                    CheckWinner(button8, button9, button10);
                 }
             }
 
